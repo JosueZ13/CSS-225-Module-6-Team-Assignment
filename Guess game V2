@@ -12,7 +12,9 @@ while game:
     RandomNumber = random.randint(1, 10)
     while guess != RandomNumber:
         guess = int(input("Enter your guess: "))
-        if guess == RandomNumber:
+        if guess < 1 or guess > 10:
+            print("Your guess should be between 1 and 10")
+        elif guess == RandomNumber:
             print("CONGRATULATIONS YOU WON!")
         elif guess > RandomNumber:
             print("Too high! Guess lower!")
@@ -22,6 +24,7 @@ while game:
     again = input("Do you want to play again (y/n)")
     if again != "y":
         game = False
-        print("Goodbye!")
+        print("Game finished, Goodbye!")
     else:
         print("Try to guess again")
+
