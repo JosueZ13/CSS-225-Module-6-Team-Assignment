@@ -1,0 +1,27 @@
+import random
+
+game = True
+guess = input("Would you like to play a game? (y/n): ").lower()
+if guess != 'y':
+    print("OK, Good bye")
+    game = False
+else:
+    game = True
+    print("Try to guess the number between 1 and 10")
+while game:
+    RandomNumber = random.randint(1, 10)
+    while guess != RandomNumber:
+        guess = int(input("Enter your guess: "))
+        if guess == RandomNumber:
+            print("CONGRATULATIONS YOU WON!")
+        elif guess > RandomNumber:
+            print("Too high! Guess lower!")
+        elif guess < RandomNumber:
+            print("Too low! Guess higher!")
+
+    again = input("Do you want to play again (y/n)")
+    if again != "y":
+        game = False
+        print("Goodbye!")
+    else:
+        print("Try to guess again")
